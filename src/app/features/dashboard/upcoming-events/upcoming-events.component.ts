@@ -6,12 +6,11 @@ import {UserDto} from 'src/app/core/models/user-dto.model';
 import {StorageService} from 'src/app/core/services/storage.service';
 
 @Component({
-  selector: 'app-upcoming-events',
+  selector: 'app-db-upcoming-events',
   templateUrl: './upcoming-events.component.html',
   styleUrls: ['./upcoming-events.component.scss']
 })
 export class UpcomingEventsComponent implements OnInit {
-
   upcomingEvents:any;
   constructor(private eventService:EventService, private storageService:StorageService) { }
 

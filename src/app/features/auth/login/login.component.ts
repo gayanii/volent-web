@@ -40,6 +40,7 @@ export class LoginComponent implements OnInit {
         data=>{
           if(data){
             this.storageService.store("IsAuthenticated",true);
+            this.storageService.store("loggedUser",data);
             this.router.navigate(['dashboard']);
           }
         }

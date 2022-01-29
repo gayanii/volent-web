@@ -14,10 +14,11 @@ export class EventService {
   constructor(protected _http: HttpClient,
     private baseService : BaseService) { }
 
-    getEventsByStatus(typeId:number) : Observable<EventDto>
+    getEventsByStatus(typeId:number, userId:string) : Observable<EventDto>
     {
       let apiUrl:string = ApiEndpoints.EventByType;
       apiUrl = apiUrl.replace("{typeId}",typeId.toString());
+      apiUrl = apiUrl.replace("{userId}",userId);
       return this.baseService.findAll(apiUrl);
     }
 

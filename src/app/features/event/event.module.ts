@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule,CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { EventRoutingModule } from './event-routing.module';
@@ -18,6 +18,7 @@ import { CreateEventComponent } from './create-event/create-event.component';
   imports: [
     CommonModule,
     EventRoutingModule
-  ]
+  ],
+  schemas:[CUSTOM_ELEMENTS_SCHEMA]
 })
 export class EventModule { }

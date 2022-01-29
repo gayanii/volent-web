@@ -4,5 +4,5 @@ export enum ApiEndpoints {
     AllInterests = "volunteer/interests",
     CreateEvent = "event/createevent",
     EventById = "event/{Eventid}",
-    EventByType = "event/type/{typeId}"
+    EventByType = "event/type/{typeId}/{userId}"
 }

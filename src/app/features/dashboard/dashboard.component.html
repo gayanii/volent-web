@@ -1,15 +1,33 @@
 <div class="wrapper">
     <div class="wrapped-div">
-      <div class="tab-header">
-          <h2 [routerLink]="['/dashboard/upcoming']" routerLinkActive="active" >Upcoming Events</h2>
-          <h2 [routerLink]="['/dashboard/attended']" routerLinkActive="active" >Attended Events</h2>
-          <h2 [routerLink]="['/dashboard/my']" routerLinkActive="active" >My Events</h2>
-        </div>
-        <div class="row">
-          <div class="col-md-10 offset-md-1">
-              <router-outlet></router-outlet>
+        <div class="tab-header">
+            <h2 [routerLink]="['/dashboard/upcoming']" routerLinkActive="active" >Upcoming Events</h2>
+            <h2 [routerLink]="['/dashboard/attended']" routerLinkActive="active" >Attended Events</h2>
+            <h2 [routerLink]="['/dashboard/my']" routerLinkActive="active" >My Events</h2>
           </div>
+          <div class="row">
+            <div class="col-md-10 offset-md-1">
+                <router-outlet></router-outlet>
+            </div>
+          </div>
+      <!-- <div class="tab-header">
+          <h2 [ngClass]="{'active' : selectedTab == 1}" > <a (click)="selectTab(1)">Upcoming Events</a> </h2>
+          <h2 [ngClass]="{'active' : selectedTab == 2}" > <a (click)="selectTab(2)">Attended Events</a></h2>
+          <h2 [ngClass]="{'active' : selectedTab == 3}" ><a (click)="selectTab(3)">My Events</a></h2>
         </div>
+        <div class="row"> -->
+          <!-- <div class="col-md-10 offset-md-1"> -->
+              <!-- <div *ngIf="selectedTab == 1">
+                <app-db-upcoming-events></app-db-upcoming-events>
+              </div>
+              <div *ngIf="selectedTab == 2">
+                  tab2
+              </div>
+              <div *ngIf="selectedTab == 3">
+                  tab2
+              </div> -->
+          <!-- </div> -->
+        <!-- </div> -->
     </div>
   </div>
   <button [routerLink]="['/create-event']" class="btn"><i class="material-icons">add</i></button>
