@@ -31,7 +31,7 @@
                           <input type="text" class="form-control" formControlName="location" required>
                           <div class="error" *ngIf="createEventForm.controls['location'].errors && createEventForm.controls['location'].touched || error">
                             <mat-error *ngIf="createEventForm.controls['location'].errors">Location is required.</mat-error>
-                          </div>
+                        </div>
                     </div>
 
                     <div>
@@ -40,8 +40,7 @@
                         </label>
                         <select class="form-control" aria-label="Default select example" formControlName="district" required>
                         <option value="" selected disabled>-Select district-</option> 
-                        <option value="colombo">Colombo</option>
-                            <option value="gampaha">Gampaha</option>
+                        <option *ngFor="let district of districts" [ngValue]="district">{{district.value}}</option>
                         </select>
                         <div class="error" *ngIf="createEventForm.controls['district'].errors && createEventForm.controls['district'].touched || error">
                             <mat-error *ngIf="createEventForm.controls['district'].errors">District is required</mat-error>
@@ -63,57 +62,36 @@
 
                     Interest types:
                     <br/>
+                    <div formArrayName="interests" *ngFor="let order of interestFormArray.controls; let i = index">
+                        <input type="checkbox" class="btn-check" [formControlName]="i" id="{{i}}"  autocomplete="off">
+                        <label class="btn btn-light" for="{{i}}">{{interests[i].category}}</label>
+                  </div>
+                  <br/><br/>
+
                     <div>
-                      <input type="checkbox" class="btn-check" id="btn-check-1" autocomplete="off">
-                        <label class="btn btn-light" for="btn-check-1">Agricultural</label>
+                        <label>
+                            Event start date:
+                        </label>
+                        <mat-form-field>
+                            <input matInput [ngxMatDatetimePicker]="picker1" formControlName="EventStartDate" readonly required>
+                            <mat-datepicker-toggle matSuffix [for]="$any(picker1)"></mat-datepicker-toggle>
+                            <ngx-mat-datetime-picker #picker1></ngx-mat-datetime-picker>
+                        </mat-form-field>
                     </div>
 
                     <div>
-                        <input type="checkbox" class="btn-check" id="btn-check-2" autocomplete="off">
-                        <label class="btn btn-light" for="btn-check-2">Health</label>
+                        <label>
+                            Event end date:
+                        </label>
+                        <mat-form-field>
+                            <input matInput [ngxMatDatetimePicker]="picker2" formControlName="EventEndDate" readonly required>
+                            <mat-datepicker-toggle matSuffix [for]="$any(picker2)"></mat-datepicker-toggle>
+                            <ngx-mat-datetime-picker #picker2></ngx-mat-datetime-picker>
+                        </mat-form-field>
                     </div>
 
-                    <div>
-                        <input type="checkbox" class="btn-check" id="btn-check-3" autocomplete="off">
-                        <label class="btn btn-light" for="btn-check-3">Educational</label>
-                    </div>
-
-                    <div>
-                        <input type="checkbox" class="btn-check" id="btn-check-4" autocomplete="off">
-                        <label class="btn btn-light" for="btn-check-4">Wildlife protection</label>
-                    </div>
-
-                    <div>
-                        <input type="checkbox" class="btn-check" id="btn-check-5" autocomplete="off">
-                        <label class="btn btn-light" for="btn-check-5">Environmental</label>
-                    </div>
-
-                    <div>
-                        <input type="checkbox" class="btn-check" id="btn-check-6" autocomplete="off">
-                        <label class="btn btn-light" for="btn-check-6">Others</label>
-                    </div>
                     <br/><br/>
-                        Event status:
-
-                        <div class="form-check">
-                            <input class="form-check-input" type="radio" name="status" id="radio1" checked>
-                            <label class="form-check-label" for="radio1">
-                              Upcoming
-                            </label>
-                        </div>
-                        <div class="form-check">
-                            <input class="form-check-input" type="radio" name="status" id="radio2">
-                            <label class="form-check-label" for="radio2">
-                                On going
-                            </label>
-                        </div>
-                        <div class="form-check">
-                            <input class="form-check-input" type="radio" name="status" id="radio3">
-                            <label class="form-check-label" for="radio3">
-                                Past
-                            </label>
-                        </div>
-                    <div class="button">
+                    <div class="button pt-4">
                         <button type="Reset" mat-button (click)="reset()" class="btn btn-secondary cta">Reset</button>
                     <input type="submit" value="Create" (click)="checkErrors()" class="btn cta create">
                     </div>

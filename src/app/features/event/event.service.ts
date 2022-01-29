@@ -5,6 +5,7 @@ import { map, delay } from 'rxjs/operators';
 import { ApiEndpoints } from 'src/app/core/enums/api-endpoints.enum';
 import {BaseService} from 'src/app/core/services/base.service';
 import {EventDto} from 'src/app/core/models/event-dto';
+import { InterestsDto } from 'src/app/core/models/interests-dto';
 
 @Injectable({
   providedIn: 'root'
@@ -26,4 +27,7 @@ export class EventService {
       return this.baseService.post(event,ApiEndpoints.CreateEvent);
     }
 
+    getAllInterestAreas() : Observable<InterestsDto[]>{
+    return this.baseService.findAll(ApiEndpoints.AllInterests);
+    }
 }

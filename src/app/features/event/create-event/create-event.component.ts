@@ -1,5 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormArray, FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
+import { DistrictList } from 'src/app/core/enums/district.enum';
+import { InterestsDto } from 'src/app/core/models/interests-dto';
+import { EventService } from '../event.service';
 
 @Component({
   selector: 'app-create-event',
@@ -11,12 +15,16 @@ export class CreateEventComponent implements OnInit {
   createEventForm!: FormGroup;
   error = false;
   imageSrc!: string;
+  interests: InterestsDto[] =[];
+  districts:any;
 
-  constructor(private fb: FormBuilder) { 
+  constructor(private fb: FormBuilder, private eventservice: EventService,private router : Router) { 
     this.initializeForm();
   }
 
   ngOnInit(): void {
+    this.getAllInterestsAreas();
+    this.districts = DistrictList;
   }
 
   initializeForm()
@@ -27,7 +35,9 @@ export class CreateEventComponent implements OnInit {
       'location': ['', Validators.required],
       'banner': ['', Validators.required],
       'district': ['', Validators.required],
-      'interestType': ['', Validators.required],
+      'interests': new FormArray([]),
+      'EventStartDate': ['', Validators.required],
+      'EventEndDate': ['', Validators.required],
     });
   }
 
@@ -45,6 +55,25 @@ export class CreateEventComponent implements OnInit {
     this.error = false;
     this.imageSrc = "";
     this.createEventForm.reset();
+  }
+
+  get interestFormArray() {
+    return this.createEventForm.controls.interests as FormArray;
+  }
+
+  getAllInterestsAreas()
+  {
+    this.eventservice.getAllInterestAreas().subscribe(
+      data=>{
+        this.interests = data;
+        console.log(this.interests);
+        this.addCheckboxesToForm();
+      }
+    )
+  }
+
+  private addCheckboxesToForm() {
+    this.interests.forEach(() => this.interestFormArray.push(new FormControl(false)));
   }
 
   onFileChange(event: any) {

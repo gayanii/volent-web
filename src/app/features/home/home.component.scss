@@ -1,5 +1,6 @@
 header {
-    background: #c8cfd4;
+    background: #fff;
+    border-bottom: 1px solid #ccc;
 }
 
 .nav-item a{
@@ -45,4 +46,111 @@ h3 {
 button {
     background: #e033ab;
     color: white;
+}
+.m_img{
+    width: 100%;
+    height: 500px;
+    position: relative;
+}
+.m_img img{
+ width: 100%;
+}
+.on_txt_mImg{
+    font-size: 50px;
+    color: #fff;
+    font-weight: 700;
+    text-shadow: 0 1px 1px rgb(0 0 0 / 50%);
+    line-height: 66px;
+    margin-bottom: -10px;
+    letter-spacing: -2px;
+    bottom: 100px;
+    position: absolute;
+    text-align: left;
+
+}
+.head_txt1{
+    font-size: 28px;
+    color: #C33DB5;
+    font-weight: bold;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    span{
+        font-size: 24px;
+        color: #333;
+        margin: 10px 0 5px 0;
+        display: flex; 
+    }
+}
+.txt1{
+    font-size: 16px;
+        color: rgb(122, 122, 122);
+}
+
+.footer-bottom_content_box {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 50px;
+    padding: 45px 0;
+    border-top: 1px solid #d8d8d8;
+    font-size: 16px;
+    color: rgb(139, 139, 139);
+}
+
+
+/* CSS */
+.button-53 {
+  background-color: #e033ab;
+  border: 0 solid #E5E7EB;
+  box-sizing: border-box;
+  color: #fff;
+  display: flex;
+  font-family: ui-sans-serif,system-ui,-apple-system,system-ui,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+  font-size: 0.7rem;
+  font-weight: 700;
+  justify-content: center;
+  line-height: 1.75rem;
+  padding: .75rem 1.65rem;
+  position: relative;
+  text-align: center;
+  text-decoration: none #000000 solid;
+  text-decoration-thickness: auto;
+  //width: 100%;
+  max-width: 200px;
+  position: relative;
+  cursor: pointer;
+  transform: rotate(-2deg);
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.button-53:focus {
+  outline: 0;
+}
+
+.button-53:after {
+  content: '';
+  position: absolute;
+  border: 1px solid #747373;
+  bottom: 4px;
+  left: 4px;
+  width: calc(100% - 1px);
+  height: calc(100% - 1px);
+}
+
+.button-53:hover:after {
+  bottom: 2px;
+  left: 2px;
+}
+
+@media (min-width: 768px) {
+  .button-53 {
+    padding: .75rem 3rem;
+    font-size: 1.25rem;
+  }
 }
