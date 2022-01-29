@@ -5,9 +5,10 @@
 .card {
     margin: 50px 10px;
     display: inline-block;
-    width: 380px;
+    width: 350px;//380px;
     padding-bottom: 70px;
     position: relative;
+    border-radius: 25px;
 }
 
 .card:hover {
@@ -32,4 +33,11 @@ img {
     width: 100%;
     object-fit: cover;
     height: 300px;
+}
+tr ,td{
+    padding-top: 5px;
+    vertical-align: top;
+}
+img{
+    border-radius: 15px;
 }

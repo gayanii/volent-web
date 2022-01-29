@@ -12,4 +12,5 @@ export interface EventDto {
     Interests : number[];
     District : District;
     EventStatus : EventStatus;
+    UserJoined : boolean;
 }

@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { LayoutRoutingModule } from './layout-routing.module';
@@ -18,6 +18,7 @@ import { FooterComponent } from './footer/footer.component';
   imports: [
     CommonModule,
     LayoutRoutingModule
-  ]
+  ],
+  schemas:[CUSTOM_ELEMENTS_SCHEMA]
 })
 export class LayoutModule { }

@@ -34,13 +34,13 @@ const routes: Routes = [
     path:'register',
     loadChildren: () => import('src/app/features/registration/registration-routing.module').then(m=>m.RegistrationRoutingModule)
   },
-  {path: 'dashboard', component: DashboardComponent,
-    children: [
-      {path: 'upcoming', component: UpcomingEventsComponent},
-      {path: 'attended', component: AttendedEventsComponent},
-      {path: 'my', component: MyEventsComponent}
-    ]
-  },
+  // {path: 'dashboard', component: DashboardComponent,
+  //   children: [
+  //     {path: 'upcoming', component: UpcomingEventsComponent},
+  //     {path: 'attended', component: AttendedEventsComponent},
+  //     {path: 'my', component: MyEventsComponent}
+  //   ]
+  // },
   {
     path:'create-event',
     loadChildren: () => import('src/app/features/event/event-routing.module').then(m=>m.EventRoutingModule)
