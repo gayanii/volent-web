@@ -6,8 +6,9 @@
     margin: 50px 10px;
     display: inline-block;
     width: 380px;
-    padding-bottom: 70px;
+    padding-bottom: 20px;
     position: relative;
+    border-radius: 25px;
 }
 
 .card:hover {
@@ -26,4 +27,15 @@
     margin: 0 -145px;
     display: flex;
     flex-wrap: wrap;
+}
+
+img {
+    width: 100%;
+    object-fit: cover;
+    height: 300px;
+    border-radius: 15px;
+}
+tr ,td{
+    padding-top: 5px;
+    vertical-align: top;
 }

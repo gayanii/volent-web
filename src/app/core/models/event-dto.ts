@@ -7,8 +7,8 @@ export interface EventDto {
     Description : string;
     EventBanner : string;
     EventName : string;
-    EventStartDate : Date;
-    EventEndDate : Date;
+    EventStartDate : any;
+    EventEndDate : any;
     Interests : number[];
     District : District;
     EventStatus : EventStatus;

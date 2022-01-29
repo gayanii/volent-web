@@ -70,24 +70,30 @@
 
                     <div>
                         <label>
-                            Event start date:
+                            Event start date and time:
                         </label>
                         <mat-form-field>
-                            <input matInput [ngxMatDatetimePicker]="picker1" formControlName="EventStartDate" readonly required>
+                            <input matInput [ngxMatDatetimePicker]="picker1" formControlName="eventStartDate" readonly required>
                             <mat-datepicker-toggle matSuffix [for]="$any(picker1)"></mat-datepicker-toggle>
                             <ngx-mat-datetime-picker #picker1></ngx-mat-datetime-picker>
                         </mat-form-field>
+                        <div class="error" *ngIf="createEventForm.controls['eventStartDate'].errors && createEventForm.controls['eventStartDate'].touched || error">
+                            <mat-error *ngIf="createEventForm.controls['eventStartDate'].errors">Event start date and time are required</mat-error>
+                        </div>
                     </div>
 
                     <div>
                         <label>
-                            Event end date:
+                            Event end date and time:
                         </label>
                         <mat-form-field>
-                            <input matInput [ngxMatDatetimePicker]="picker2" formControlName="EventEndDate" readonly required>
+                            <input matInput [ngxMatDatetimePicker]="picker2" formControlName="eventEndDate" readonly required>
                             <mat-datepicker-toggle matSuffix [for]="$any(picker2)"></mat-datepicker-toggle>
                             <ngx-mat-datetime-picker #picker2></ngx-mat-datetime-picker>
                         </mat-form-field>
+                        <div class="error" *ngIf="createEventForm.controls['eventEndDate'].errors && createEventForm.controls['eventEndDate'].touched || error">
+                            <mat-error *ngIf="createEventForm.controls['eventEndDate'].errors">Event end date and time are required</mat-error>
+                        </div>
                     </div>
 
                     <br/><br/>

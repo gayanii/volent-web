@@ -3,6 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { MatFormFieldModule } from "@angular/material/form-field";
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {MatInputModule} from '@angular/material/input';
+import { DatePipe } from '@angular/common';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -20,7 +21,7 @@ import { LoginComponent } from './features/auth/login/login.component';
 import { DashboardComponent } from './features/dashboard/dashboard.component';
 import { SharedModule } from './shared/shared.module';
 import { CreateEventComponent } from './features/event/create-event/create-event.component';
-import {UpcomingEventsComponent} from 'src/app/features/event/upcoming-events/upcoming-events.component';
+import { UpcomingEventsComponent } from './features/event/upcoming-events/upcoming-events.component';
 
 @NgModule({
   declarations: [
@@ -52,7 +53,9 @@ import {UpcomingEventsComponent} from 'src/app/features/event/upcoming-events/up
     // MatMomentDateModule,
     MatNativeDateModule
   ],
-  providers: [],
+  providers: [
+    DatePipe
+  ],
   bootstrap: [AppComponent],
   schemas:[CUSTOM_ELEMENTS_SCHEMA]
 })

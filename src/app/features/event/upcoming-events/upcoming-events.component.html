@@ -1,38 +1,24 @@
 <div class="wrapper">
-        <div class="card shadow col-md-4 col-sm-4" *ngFor="let item of upcomingEvents">  
-                <div class="card-body">
-                        <div><h4><b>test event</b></h4></div>
-                       <div><img src="https://cdn.lifehack.org/wp-content/uploads/2014/05/Reasons-To-Do-Voluntary-Work.jpg" alt=""></div>
-                       <table>
-                           <!-- <tr>
-                               <td ><b>Event name</b></td>
-                               <td>test event</td>
-                           </tr> -->
-                           <tr>
-                               <td><b>About</b></td>
-                               <td style="width: 70%;">Test description. Test description. Test description</td>
-                           </tr>
-                           <tr>
-                               <td><b>Location</b></td>
-                               <td>Colombo 7</td>
-                           </tr>
-                           <tr>
-                               <td><b>From</b></td>
-                               <td>27 Jan, 2022 10:00AM</td>
-                           </tr>
-                           <tr>
-                               <td><b>To</b></td>
-                               <td>28 Jan, 2022 4:00PM</td>
-                           </tr>
-                       </table>
-                       <button class="btn">Join</button>
-                   </div>
-       </div>
-       <!-- <div class="card shadow col-md-4 col-sm-4">  
+         <div class="card shadow col-md-4 col-sm-4" *ngFor="let item of upcomingEvents">  
+           <div class="card-body">
+               <div> <b>{{item.eventName}} </b></div>
+               <div><img src="{{item.eventBanner}}" alt=""></div>
+               <div><b>Description:</b> {{item.description}}</div>
+               <div><b>Location:</b> {{item.location}}</div>
+               <div><b>From:</b> {{item.eventStartDate | date:'medium' }}</div>
+               <div><b>To:</b> {{item.eventEndDate| date:'medium' }}</div>
+               <button class="btn">Join</button>
+           </div>
+       </div> 
+      <!-- <div class="card shadow col-md-4 col-sm-4">  
                <div class="card-body">
                     <div><h4><b>test event</b></h4></div>
                    <div><img src="https://cdn.lifehack.org/wp-content/uploads/2014/05/Reasons-To-Do-Voluntary-Work.jpg" alt=""></div>
                    <table>
+                        <tr>
+                           <td ><b>Event name</b></td>
+                           <td>test event</td>
+                       </tr> -
                        <tr>
                            <td><b>About</b></td>
                            <td style="width: 70%;">Test description. Test description. Test description</td>
@@ -59,6 +45,10 @@
                     <div><h4><b>test event</b></h4></div>
                    <div><img src="https://previews.123rf.com/images/wavebreakmediamicro/wavebreakmediamicro1403/wavebreakmediamicro140340624/28383043-team-of-young-volunteers-picking-up-litter-in-the-park.jpg" alt=""></div>
                    <table>
+                       <tr>
+                           <td ><b>Event name</b></td>
+                           <td>test event</td>
+                       </tr> 
                        <tr>
                            <td><b>About</b></td>
                            <td style="width: 70%;">Test description. Test description. Test description</td>
@@ -87,32 +77,9 @@
                    <div><img src="https://media.istockphoto.com/photos/woman-pick-up-bottle-from-ground-use-garbage-bag-for-collecting-picture-id1257053959" alt=""></div>
                    <table>
                        <tr>
-                           <td><b>About</b></td>
-                           <td style="width: 70%;">Test description. Test description. Test description</td>
-                       </tr>
-                       <tr>
-                           <td><b>Location</b></td>
-                           <td>Colombo 7</td>
-                       </tr>
-                       <tr>
-                           <td><b>From</b></td>
-                           <td>27 Jan, 2022 10:00AM</td>
-                       </tr>
-                       <tr>
-                           <td><b>To</b></td>
-                           <td>28 Jan, 2022 4:00PM</td>
-                       </tr>
-                   </table>
-                   <button class="btn">Join</button>
-               </div>
-           </div> -->
-   
-   
-           <!-- <div class="card shadow col-md-4 col-sm-4">  
-               <div class="card-body">
-                    <div><h4><b>test event</b></h4></div>
-                   <div><img src="https://cdn.lifehack.org/wp-content/uploads/2014/05/Reasons-To-Do-Voluntary-Work.jpg" alt=""></div>
-                   <table>
+                           <td ><b>Event name</b></td>
+                           <td>test event</td>
+                       </tr> 
                        <tr>
                            <td><b>About</b></td>
                            <td style="width: 70%;">Test description. Test description. Test description</td>
@@ -141,6 +108,41 @@
                    <div><img src="https://cdn.lifehack.org/wp-content/uploads/2014/05/Reasons-To-Do-Voluntary-Work.jpg" alt=""></div>
                    <table>
                        <tr>
+                           <td ><b>Event name</b></td>
+                           <td>test event</td>
+                       </tr> 
+                       <tr>
+                           <td><b>About</b></td>
+                           <td style="width: 70%;">Test description. Test description. Test description</td>
+                       </tr>
+                       <tr>
+                           <td><b>Location</b></td>
+                           <td>Colombo 7</td>
+                       </tr>
+                       <tr>
+                           <td><b>From</b></td>
+                           <td>27 Jan, 2022 10:00AM</td>
+                       </tr>
+                       <tr>
+                           <td><b>To</b></td>
+                           <td>28 Jan, 2022 4:00PM</td>
+                       </tr>
+                   </table>
+                   <button class="btn">Join</button>
+               </div>
+           </div> -->
+   
+   
+           <!-- <div class="card shadow col-md-4 col-sm-4">  
+               <div class="card-body">
+                    <div><h4><b>test event</b></h4></div>
+                   <div><img src="https://cdn.lifehack.org/wp-content/uploads/2014/05/Reasons-To-Do-Voluntary-Work.jpg" alt=""></div>
+                   <table>
+                        <tr>
+                           <td ><b>Event name</b></td>
+                           <td>test event</td>
+                       </tr> 
+                       <tr>
                            <td><b>About</b></td>
                            <td style="width: 70%;">Test description. Test description. Test description</td>
                        </tr>
@@ -168,6 +170,10 @@
                    <div><img src="https://cdn.lifehack.org/wp-content/uploads/2014/05/Reasons-To-Do-Voluntary-Work.jpg" alt=""></div>
                    <table>
                        <tr>
+                           <td ><b>Event name</b></td>
+                           <td>test event</td>
+                       </tr> 
+                       <tr>
                            <td><b>About</b></td>
                            <td style="width: 70%;">Test description. Test description. Test description</td>
                        </tr>
@@ -188,7 +194,7 @@
                </div>
            </div> -->
    
-   
+        -->
    
        <!-- <div class="card shadow col-md-4 col-sm-4">
            <div class="card-body">
