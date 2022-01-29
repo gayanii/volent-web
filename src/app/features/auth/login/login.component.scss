@@ -19,12 +19,13 @@ header {
 }
 
 .card {
-    margin: 50px auto !important;
+    margin: 14% auto 0% auto !important;
 }
 
 .form-group {
     column-gap: 20px;
-    margin: 50px 20px;
+    // margin: 50px 20px;
+    margin: 15px 20px;
 }
 
 .cta {
@@ -57,9 +58,29 @@ h3 {
 .bottomLine {
     justify-content: center;
     display: flex;
-    padding-bottom: 50px;
+    padding-top: 10px;
+    // padding-bottom: 50px;
 }
 
 a {
     color: #e033ab;
+}
+
+
+.loginCard{
+    width: 450px;
+    border-radius: 25px;
+}
+.logoLogin{
+    // position: relative;
+    // left: 35%;
+    width: 100px;
+    height: 100px;
+}
+.loginText{
+    background-color: white !important;
+}
+
+.wrapper{
+    overflow: hidden;
 }

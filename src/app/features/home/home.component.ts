@@ -18,4 +18,8 @@ export class HomeComponent implements OnInit {
   GoToLoginPage(){
     this.router.navigate(['login']);
   }
+
+  GoToRegistrationPage(){
+    this.router.navigate(['register']);
+  }
 }
