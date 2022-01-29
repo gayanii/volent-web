@@ -13,7 +13,7 @@ import {StorageService} from 'src/app/core/services/storage.service';
 export class UpcomingEventsComponent implements OnInit {
 
   upcomingEvents:any;
-  arr: Array<string> = ['./assets/trees.jfif', './assets/Reasons-To-Do-Voluntary-Work.jpg', './assets/img1.jpg','./assets/img2.jpg','./assets/img3.jpg','./assets/img4.jpg','./assets/img5.jpg','./assets/img6.jpg',];
+  arr: Array<string> = ['./assets/trees.jfif', './assets/Reasons-To-Do-Voluntary-Work.jpg', './assets/img1.jpg','./assets/img2.jpg','./assets/img3.jpg','./assets/img4.jpg','./assets/img5.jpg','./assets/img6.jpg','./assets/img10.jpg','./assets/img7.jpg','./assets/img8.jpg','./assets/img9.jpg'];
 
   constructor(private eventService:EventService, private storageService:StorageService) { }
 
