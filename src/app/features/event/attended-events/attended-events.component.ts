@@ -12,7 +12,7 @@ import {StorageService} from 'src/app/core/services/storage.service';
 export class AttendedEventsComponent implements OnInit {
 
   attentedEvents:any;
-  arr: Array<string> = ['./assets/Reasons-To-Do-Voluntary-Work.jpg', './assets/img1.jpg','./assets/img2.jpg','./assets/img3.jpg','./assets/img4.jpg','./assets/img5.jpg','./assets/img6.jpg','./assets/img10.jpg','./assets/img7.jpg','./assets/img8.jpg','./assets/img9.jpg'];
+  arr: Array<string> = ['./assets/Reasons-To-Do-Voluntary-Work.jpg', './assets/img3.jpg','./assets/img4.jpg','./assets/img5.jpg','./assets/img6.jpg','./assets/img10.jpg','./assets/img7.jpg','./assets/img8.jpg','./assets/img9.jpg'];
   arrStar: Array<string> = ['./assets/1rating.png', './assets/2rating.png', './assets/3rating.png','./assets/4rating.png','./assets/5rating.png'];
 
   constructor(private eventService:EventService, private storageService:StorageService) { }
