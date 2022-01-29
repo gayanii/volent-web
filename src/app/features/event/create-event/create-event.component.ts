@@ -1,7 +1,9 @@
+import { DatePipe } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { FormArray, FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { DistrictList } from 'src/app/core/enums/district.enum';
+import { EventDto } from 'src/app/core/models/event-dto';
 import { InterestsDto } from 'src/app/core/models/interests-dto';
 import { EventService } from '../event.service';
 
@@ -17,8 +19,10 @@ export class CreateEventComponent implements OnInit {
   imageSrc!: string;
   interests: InterestsDto[] =[];
   districts:any;
+  formattedDate!: Date;
 
-  constructor(private fb: FormBuilder, private eventservice: EventService,private router : Router) { 
+  constructor(private fb: FormBuilder, private eventservice: EventService,
+    private router : Router, private datePipe: DatePipe) { 
     this.initializeForm();
   }
 
@@ -36,15 +40,52 @@ export class CreateEventComponent implements OnInit {
       'banner': ['', Validators.required],
       'district': ['', Validators.required],
       'interests': new FormArray([]),
-      'EventStartDate': ['', Validators.required],
-      'EventEndDate': ['', Validators.required],
+      'eventStartDate': ['', Validators.required],
+      'eventEndDate': ['', Validators.required],
     });
+  }
+
+  dateFormat(date:any) {
+    this.formattedDate = new Date(date);
+    return this.datePipe.transform(this.formattedDate, 'yyyy-MM-dTHH:mm:ss');
   }
 
   createEvent() {
     if (this.createEventForm.valid) {
+      let event:EventDto = this.getFormData();
+      this.eventservice.createEvent(event).subscribe(
+        data=>{
+          this.router.navigate(['dashboard/upcoming']);
+        },
+        error=>{
+
+        }
+      )
+      console.log(event);
     }
+    console.log(this.dateFormat(this.createEventForm.value.eventStartDate));
+    console.log(this.createEventForm.value.district);
     // "this.createEventForm.value.banner" gives the image url as a string
+  }
+
+  getFormData():EventDto
+  {
+    const createEventFormValues = this.createEventForm.value;
+    const selectedInterestIds: number[] = createEventFormValues.interests
+      .map((checked:any, i:any) => checked ? this.interests[i].interestId : null)
+      .filter((v:any) => v !== null);
+
+    return ({
+      EventName : createEventFormValues.eventName,
+      Description : createEventFormValues.description,
+      Location: createEventFormValues.location,
+      EventBanner: "image.jpg",
+      District: parseInt(createEventFormValues.district.key.toString()),
+      EventStartDate: this.dateFormat(createEventFormValues.eventStartDate),
+      EventEndDate: this.dateFormat(createEventFormValues.eventEndDate),
+      Interests : selectedInterestIds,
+      EventStatus: 1
+    } as EventDto);
   }
 
   checkErrors() {
