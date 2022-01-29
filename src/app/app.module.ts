@@ -21,6 +21,7 @@ import { LoginComponent } from './features/auth/login/login.component';
 import { DashboardComponent } from './features/dashboard/dashboard.component';
 import { SharedModule } from './shared/shared.module';
 import { CreateEventComponent } from './features/event/create-event/create-event.component';
+import { UpcomingEventsComponent } from './features/event/upcoming-events/upcoming-events.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { CreateEventComponent } from './features/event/create-event/create-event
     RegistrationComponent,
     LoginComponent,
     DashboardComponent,
-    CreateEventComponent
+    CreateEventComponent,
+    UpcomingEventsComponent
   ],
   imports: [
     BrowserModule,

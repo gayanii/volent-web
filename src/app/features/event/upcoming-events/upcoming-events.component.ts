@@ -13,6 +13,8 @@ import {StorageService} from 'src/app/core/services/storage.service';
 export class UpcomingEventsComponent implements OnInit {
 
   upcomingEvents:any;
+  arr: Array<string> = ['./assets/trees.jfif', './assets/Reasons-To-Do-Voluntary-Work.jpg', './assets/img1.jpg','./assets/img2.jpg','./assets/img3.jpg','./assets/img4.jpg','./assets/img5.jpg','./assets/img6.jpg',];
+
   constructor(private eventService:EventService, private storageService:StorageService) { }
 
   ngOnInit(): void {
@@ -24,6 +26,11 @@ export class UpcomingEventsComponent implements OnInit {
     this.eventService.getEventsByStatus(EventStatus.Draft, user.UserId).subscribe(
       data=>{
         this.upcomingEvents = data;
+        for(let i=0; i<this.upcomingEvents.length; i++){
+          console.log(this.upcomingEvents.eventBanner); //use i instead of 0
+          var item = this.arr[Math.floor(Math.random() * this.arr.length)];
+          this.upcomingEvents[i].eventBanner = item;
+       }
       }
     )
   }
