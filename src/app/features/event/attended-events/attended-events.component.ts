@@ -23,7 +23,7 @@ export class AttendedEventsComponent implements OnInit {
 
   getAttentedEvents(){
     let user:UserDto = JSON.parse(this.storageService.get("loggedUser"));
-    this.eventService.getEventsByStatus(EventStatus.All, user.UserId).subscribe(
+    this.eventService.getEventsByStatus(EventStatus.Expired, user.UserId).subscribe(
       data=>{
         this.attentedEvents = data;
         for(let i=0; i<this.attentedEvents.length; i++){
