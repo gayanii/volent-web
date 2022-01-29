@@ -51,7 +51,9 @@ import { CreateEventComponent } from './features/event/create-event/create-event
     // MatMomentDateModule,
     MatNativeDateModule
   ],
-  providers: [],
+  providers: [
+    DatePipe
+  ],
   bootstrap: [AppComponent],
   schemas:[CUSTOM_ELEMENTS_SCHEMA]
 })
